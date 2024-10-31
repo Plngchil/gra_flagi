@@ -1,0 +1,12 @@
+#center{
+   margin-left: 500px;
+   margin-right: 400px;
+}
+
+#div{
+    width: 400px;
+    height: 600px;
+    border: 1px solid black;
+    background-color: wheat;
+    text-align: center;
+}
