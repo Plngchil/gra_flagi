@@ -6,7 +6,6 @@ async function getData() {
 
 async function kraje() {
     const countries = await getData();
-
     const div = document.getElementById('div');
     const input = document.querySelector('input');
     const button = document.getElementById("button");
@@ -30,6 +29,7 @@ async function kraje() {
         nazwa.innerHTML = countries[country].name.common;
         p.innerHTML = "";
         input.value = "";
+        console.log(countries[country].capital)
     }
     function nowaGra() {
         goodAnsw = 0;
@@ -53,7 +53,12 @@ async function kraje() {
         bad.innerHTML = `Niepoprawne: ${badAnsw}`;
 
         if (badAnsw === 5) {
-            alert(`Zgadłeś ${goodAnsw} stolic. Nowa gra rozpocznie się automatycznie.`);
+            if(goodAnsw==1 || goodAnsw==2 || goodAnsw==3 || goodAnsw==4){
+                alert(`Zgadłeś ${goodAnsw} stolice. Nowa gra rozpocznie się automatycznie.`);
+            }
+            else{
+                alert(`Zgadłeś ${goodAnsw} stolic. Nowa gra rozpocznie się automatycznie.`);
+            }
             nowaGra();
         } else {
             losujKraj();
